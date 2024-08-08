@@ -1,0 +1,14 @@
+Group 5: Xử lý và phân loại các loại bệnh về tim dựa trên bộ dữ liệu về điện tâm đồ
+
+1) Sinh viên đã làm được:
++ Models: LSTM, MLP, KNN, Random Forest, Decision Tree
++ Data:  MIT-BIH Arrhythmia Dataset (109.446) và PTB Diagnostic ECG Databa (14.552)
+
+2) Hướng phát triển
++ Trình bày rõ cách thức chuyển dữ liệu ECG vào các mô hình. Vì sao các mô hình có thể hiểu được dữ liệu ECG.
++ Cần thống kê thời gian huấn luyện và thời gian phân loại của từng mô hình
++ Tìm thêm nhiều công trình liên quan hơn, đánh giá công trình của mình khác/cải tiến như thế nào so với họ.
++ Tìm thêm một tập dữ liệu ECG để so sánh thêm.
++ SV cần phân tích và đưa ra ví dụ (cho từng mô hình): vì sao một số mẫu ECG bị nhận diện/phân loại sai, sai ở điểm nào?
++ Đề xuất cải tiến mô hình/giải thuật để có được độ chính xác/độ đầy đủ tốt  hơn. Ví dụ chọn một mô hình, phân tích kỹ từng bước giải thuật của mô hình đó. Xem thử có cải tiến được bước nào không?. Hoặc kết hợp 2 mô hình làm một mô hình từ các bước giải thuật của chúng.
+

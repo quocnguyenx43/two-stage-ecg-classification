@@ -1,0 +1,124 @@
+- Machine Learning Approach to Detect Cardiac Arrhythmias in ECG Signals: A Survey
+	- ECG Noise:
+		- Powerline interference
+		- Baseline wander
+		- Muscle artifacts
+	- Denoise:
+		- [22] mathematical morphology [23] adaptive filtering
+		- [24] weighted averaging filter
+		- [25] independent component analysis
+	- Workflow:
+		+ Pre-processing: Loại bỏ các power line, motion artifacts and instrumentation noises bằng adaptive filter
+		+ Peak detection: Có nhiều cách khác nhau
+		+ Feature extraction
+		+ Classification
+	- Mô tả về database:
+		- MITDB
+		- AAMI
+
+
+- An Automated System for ECG Arrhythmia Detection Using Machine Learning Techniques: Hệ thống phân lớp minority arrhythmical classes tự động không cần trích xuất đặc trưng 
+	- Seperation data:
+		+ Inter-patients: dựa vào beat type -> dẫn đến mô hình bị overoptimistic
+		+ Intra-patients: dựa vào bệnh nhân -> realest world hơn
+	- Đề xuất 1 seperation schema
+
+
+- Classification of ECG signals using Machine Learning Techniques: A Survey:"
+	Các Related works:
+		[1, 2]: Challenge của bài toán
+		- [5]: A. Dallali et al. [5] đã trích xuất RR interval bằng DWT và chuẩn hóa khoảng RR interval bằng Z score. Họ sử dụng FCM để phân lớp ECGs và đạt độ chính xác 99.05%.
+		- [6]: Đặc trưng được sử dụng là RR interval và R point được trích xuất bằng DWT đạt độ chính xác 99,99%
+		- [7]: Đặc trưng được sử dụng là R peak và RR interval đạt kết quả MSE là 0.00621
+		- [8]: H.Khorrami et al. sử dụng RR interval trích xuất bằng DWT. So sánh giữa MLPNN và SVM.
+		- [9]: D.Patra et al. trích xuất thủ công R peak và RR interval từ anotation file, normalizing sử dụng Zero mean và phân lớp sử dụng FCM
+		- [10]: F.Naima et al. trích xuất R location và RR interval sử dụng Db4 discrete wavelet transform. Phân lớp bằng NN đạt kết quả. Sensitivity, specificity và accuracy là 90, 90 và 95.
+		- [11]: A.Khazaee el al. tính nxtRR, prevRR và từ RR interval rồi normalzing bằng Zero mean và std. Sử dụng PSO-SVM
+		- [12]: RR interval được sử dụng, so sánh giữa việc dùng NN và SVM. Performance NN > SVM, Traning SVM > NN.
+		- [13]: RR interval và R peak sử dụng DWT, normalizing bằng Zero mean, noise removal sử dụng pass filter, phân lớp bằng NN. Sử dụng 2 database: MIT-BIH và Normal sinus rhythm database
+		- [14]: R peak, RRt interval (current RR interval at t time), RRt+1 interval (next RR interval at t+1 time), QRSh (QRS complex height), and QRS width được sử dụng. Sensitivity và specificity đạt được sử dụng PSO-RBFNN là 96.251 % và 99.104%
+	Database khác:
+		- MIT-BIH Arrhythmia [36], [37]
+		- PTB Diagnostic ECG Database
+		- UCI Arrhythmia [35]
+		- Normal sinus Rhythm
+		- QT
+		- T-wave alternans challenge
+
+
+- Cardiologist-Level Arrhythmia Detection with Convolutional Neural Networks:
+	- Phương pháp CNN đầu tiên cho bài toán
+	- Mô hình Seq2seq (Từ time-series của ECG ra 1 list các bệnh)
+	- Database khác:
+		- MITDB
+		- PTBDB
+		- ESCDB
+	- Phương pháp phân lớp:
+		- [67, 68]: Phân lớp Normal and Abnormal sử dụng threshold-based
+		- [3]: Sử dụng DWT -> PCA, ICA
+		- Multimodel Decision Learning đạt 100% Sensitivity
+		- Các phương pháp khác
+
+
+- ECG Heartbeat Classification: A Deep Transferable Representation (Main ref)
+	- Preprocessing:
+		+ Chỉ xài ECG Lead II
+		+ 10s window beat
+		+ Normalizing value về 0 - 1
+		+ Finding the set of all local maximums based on zero crossings of the first derivative
+		+ Finding the set of ECG R-peak candidates by applying a threshold of 0.9 on the normalized value of the local maximums
+		+ Finding the median of R-R time intervals as the nominal heartbeat period of that window (T).
+		+  For each R-peak, selecting a signal part with the length equal to 1.2T
+		+ Padding each selected part with zeros to make its length equal to a predefined fixed length
+
+
+- A Fast Machine Learning Model for ECG-Based Heartbeat Classification and Arrhythmia Detection
+	- Database:
+		- The MIT-BIH: using lead II
+		- The AHA database
+	- Xử lý dữ liệu (related paper):
+		- cách morphological:
+			- time domain (intervals, amplitudes, areas) [3, 14, 15, 24]
+			- frequency-domain  [6, 7, 16, 17, 25]
+			- wavelet transforms [4, 8–11, 18, 26]
+			- complex heartbeat representations [16]
+			- higher order statistics (HOS) [4 6 7 9]
+		- sử dụng ML:
+			- ICA [18, 16]
+			- PCA [18]
+			- particle swarm optimization (PSO) [16]
+			- genetic algorithm back propagation neural networks (GA-BPNN) [23]
+	- Chọn kết hợp 2 database để balance luôn
+	- Phương pháp tiền xử lý đơn giản hóa
+	- So sánh với các phương pháp của các paper khác
+
+
+- Interpretable Machine Learning Techniques in ECG-Based Heart Disease Classification: A Systematic Review
+	- database for heart diagnosis
+	- database for beat, ryhthm, signal level
+
+
+
+* Database khác: 
+	- Arrhythmia
+		+ MIT-BIH Database (2 leads)
+		+ Normal Sinus Rhythm (2 leads)
+		+ T-wave alternans challenge (2 leads)
+		+ A large scale 12-lead electrocardiogram database for arrhythmia study (12 leads)
+
+	- 12 leads & clinical cardiac diagnosis:
+		+ CPSC, CPSC-Extra, CPSC test set (CPSC2018)
+		+ St Petersburg INCART 12-lead Arrhythmia Database
+		+ PTB & PTB-XL (Multi-label)
+		+ Georgia 12-lead ECG Challenge (G12EC) Database
+		+ A large scale 12-lead electrocardiogram database for arrhythmia study (Multi-label)
+
+	- Apnea Detection (one next minute is apnea or not):
+		+ Apnea-ECG Database (có label cho Arrhythmia)
+
+	- ST-wave & T-wave:
+		+ European ST-T Database / EDB (2 leads)
+
+	- Khác:
+		+ BIDMC Congestive Heart Failure Database (2 leads) -> chứa ECG về các bệnh nhân suy tim nặng
+
