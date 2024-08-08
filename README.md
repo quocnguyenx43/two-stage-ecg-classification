@@ -1,5 +1,5 @@
 
-# Xử lý và phân loại các loại bệnh về tim dựa
+# Phương pháp phân loại các loại bệnh tim 2 bước dựa trên dữ liệu ECG
 
 1. Bộ dữ liệu
 Được lấy từ https://www.kaggle.com/datasets/shayanfazeli/heartbeat
